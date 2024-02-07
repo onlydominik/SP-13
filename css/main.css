@@ -129,10 +129,10 @@ p {
     min-width: 25em;
   }
   .rating__item:nth-of-type(1) {
-    margin-right: 10em;
+    margin-right: 6em;
   }
   .rating__item:nth-of-type(2) {
-    margin-right: 5em;
+    margin-right: 3em;
   }
 }
 
@@ -221,7 +221,7 @@ body {
 
 main {
   margin: 5rem auto;
-  width: min(90%, 1300px);
+  width: min(90%, 1200px);
 }
 @media (min-width: 75em) {
   main {

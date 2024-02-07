@@ -21,7 +21,7 @@ body {
 
 main {
   margin: 5rem auto;
-  width: min(90%, 1300px);
+  width: min(90%, 1200px);
   @include breakpoints.medium {
     display: flex;
     flex-wrap: wrap;
