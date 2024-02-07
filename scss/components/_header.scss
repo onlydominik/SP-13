@@ -1,0 +1,13 @@
+@use "../abstract/breakpoints";
+header {
+  @include breakpoints.medium {
+    width: 32%;
+    & p {
+      text-align: start !important;
+    }
+    & h1 {
+      text-align: start !important;
+      width: 90%;
+    }
+  }
+}

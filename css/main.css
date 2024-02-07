@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+:root {
+  --clr-primary-100: hsl(333, 80%, 67%);
+  --clr-primary-200: hsl(300, 43%, 22%);
+  --clr-accent-100: hsl(300, 24%, 96%);
+  --clr-accent-200: hsl(303, 10%, 53%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+}
+
+:root {
+  --size-100: 1rem;
+  --size-200: 3rem;
+  --size-300: 2rem;
+  --size-500: 40rem;
+  --size-600: 70rem;
+}
+
+:root {
+  font-size: 93.75%;
+  font-family: "League Spartan", sans-serif;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+  --fs-400: 0.875rem;
+  --fs-500: 1rem;
+  --fs-600: 1.0625rem;
+  --fs-700: 1.25rem;
+  --fs-800: 1.5rem;
+  --fs-900: 2.5rem;
+}
+@media (min-width: 75em) {
+  :root {
+    font-size: 110%;
+  }
+}
+
+/***
+    The new CSS reset - version 1.11.2 (last updated 15.11.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Fix mobile Safari increase font-size on landscape mode */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* revert for bug in Chromium browsers
+       - fix for the content editable attribute will work properly.
+       - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+h1 {
+  font-size: var(--fs-900);
+  font-weight: var(--fw-700);
+  color: var(--clr-primary-200);
+  line-height: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--clr-primary-200);
+}
+
+.subtitle {
+  text-align: center;
+}
+
+.rating {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-100);
+  font-weight: 700;
+  margin: var(--size-200) auto;
+}
+@media (min-width: 75em) {
+  .rating {
+    width: 60%;
+    margin: var(--size-200) 0;
+    align-items: end;
+  }
+}
+
+.rating__item {
+  background-color: var(--clr-accent-100);
+  padding: 1em 0;
+  border-radius: 7px;
+}
+@media (min-width: 75em) {
+  .rating__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    min-width: 25em;
+  }
+  .rating__item:nth-of-type(1) {
+    margin-right: 10em;
+  }
+  .rating__item:nth-of-type(2) {
+    margin-right: 5em;
+  }
+}
+
+.rating__stars {
+  display: inline-block;
+  background: url(../images/icon-star.svg);
+  height: 16px;
+  width: 125px;
+  margin-bottom: 0.3em;
+}
+
+.comments {
+  display: grid;
+  gap: var(--size-100);
+}
+@media (min-width: 75em) {
+  .comments {
+    flex-basis: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--size-300);
+  }
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  margin-bottom: 1.5em;
+}
+
+.comments__item {
+  background-color: var(--clr-primary-200);
+  padding: 2em;
+  border-radius: 7px;
+  height: fit-content;
+}
+.comments__item img {
+  border-radius: 50%;
+  width: 2.5em;
+}
+.comments__item h2 {
+  color: var(--clr-neutral-100);
+  font-weight: 700;
+}
+.comments__item p {
+  color: var(--clr-primary-100);
+}
+.comments__item q {
+  color: var(--clr-neutral-100);
+  line-height: 1em;
+}
+@media (min-width: 75em) {
+  .comments__item:nth-of-type(2) {
+    margin-top: 1em;
+  }
+  .comments__item:nth-of-type(3) {
+    margin-top: 2em;
+  }
+}
+
+@media (min-width: 75em) {
+  header {
+    width: 32%;
+  }
+  header p {
+    text-align: start !important;
+  }
+  header h1 {
+    text-align: start !important;
+    width: 90%;
+  }
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  background: url("../images/bg-pattern-top-mobile.svg") no-repeat, url("../images/bg-pattern-bottom-mobile.svg") no-repeat right bottom;
+}
+@media (min-width: 23.4375em) {
+  body {
+    background: url("../images/bg-pattern-top-desktop.svg") no-repeat, url("../images/bg-pattern-bottom-desktop.svg") no-repeat right bottom;
+  }
+}
+
+main {
+  margin: 5rem auto;
+  width: min(90%, 1300px);
+}
+@media (min-width: 75em) {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

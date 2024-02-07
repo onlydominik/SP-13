@@ -1,0 +1,44 @@
+@use "../abstract/breakpoints";
+.rating {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-100);
+  font-weight: 700;
+  margin: var(--size-200) auto;
+  @include breakpoints.medium {
+    width: 60%;
+    margin: var(--size-200) 0;
+    align-items: end;
+  }
+}
+
+.rating__item {
+  background-color: var(--clr-accent-100);
+
+  padding: 1em 0;
+  border-radius: 7px;
+  @include breakpoints.medium {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    min-width: 25em;
+
+    &:nth-of-type(1) {
+      margin-right: 10em;
+    }
+
+    &:nth-of-type(2) {
+      margin-right: 5em;
+    }
+  }
+}
+
+.rating__stars {
+  display: inline-block;
+  background: url(../images/icon-star.svg);
+  height: 16px;
+  width: 25px * 5;
+  margin-bottom: 0.3em;
+}

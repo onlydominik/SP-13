@@ -1,0 +1,15 @@
+// SPACING //
+
+$sizes: (
+  100: 1rem,
+  200: 3rem,
+  300: 2rem,
+  500: 40rem,
+  600: 70rem,
+);
+
+:root {
+  @each $name, $value in $sizes {
+    --size-#{$name}: #{$value};
+  }
+}

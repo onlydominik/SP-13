@@ -1,0 +1,31 @@
+@use "../abstract/breakpoints";
+@mixin bg($url-top, $url-bottom) {
+  background: url($url-top) no-repeat, url($url-bottom) no-repeat right bottom;
+}
+
+html {
+  height: 100vh;
+}
+body {
+  @include bg(
+    "../images/bg-pattern-top-mobile.svg",
+    "../images/bg-pattern-bottom-mobile.svg"
+  );
+  @include breakpoints.small {
+    @include bg(
+      "../images/bg-pattern-top-desktop.svg",
+      "../images/bg-pattern-bottom-desktop.svg"
+    );
+  }
+}
+
+main {
+  margin: 5rem auto;
+  width: min(90%, 1300px);
+  @include breakpoints.medium {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
